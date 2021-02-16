@@ -178,7 +178,7 @@ test('find python - no python, use python launcher', function (t) {
 test('find python - no python, no python launcher, good guess', function (t) {
   t.plan(2)
 
-  var re = /C:[\\/]Python37[\\/]python[.]exe/
+  var re = /C:[\\/]Program Files[\\/]Python37[\\/]python[.]exe/
   var f = new TestPythonFinder(null, done)
   f.win = true
 
