@@ -19,12 +19,20 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
+      - name: Run py launcher with -0
+        if: matrix.os == 'windows-latest'
+        run: |
+          py -0
       - name: Use Python ${{ matrix.python }}
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python }}
         env:
           PYTHON_VERSION: ${{ matrix.python }}
+      - name: Run py launcher with -0 (again)
+        if: matrix.os == 'windows-latest'
+        run: |
+          py -0
       - name: Install Dependencies
         run: |
           npm install --no-progress
