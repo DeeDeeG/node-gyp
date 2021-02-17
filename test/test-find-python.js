@@ -178,7 +178,8 @@ test('find python - no python, use python launcher', function (t) {
 test('find python - no python, no python launcher, good guess', function (t) {
   t.plan(2)
 
-  var re = /C:[\\/]Program Files[\\/]Python37[\\/]python[.]exe/
+  // One of the `winDefaultLocations[]` entries from lib/find-python.js, copied here verbatim
+  var re = new RegExp(path.join(process.env.SystemDrive || 'C:', 'Users', process.env.USERNAME || process.env.USER, 'AppData', 'Local', 'Programs', 'Python', 'Python37', 'python.exe'))
   var f = new TestPythonFinder(null, done)
   f.win = true
 
