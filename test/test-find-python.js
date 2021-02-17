@@ -6,6 +6,7 @@ const test = require('tap').test
 const findPython = require('../lib/find-python')
 const execFile = require('child_process').execFile
 const PythonFinder = findPython.test.PythonFinder
+const path = require('path')
 
 require('npmlog').level = 'warn'
 
