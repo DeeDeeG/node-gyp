@@ -20,7 +20,6 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - name: Run py launcher with -0
-        if: matrix.os == 'windows-latest'
         run: |
           py -0
       - name: Use Python ${{ matrix.python }}
@@ -30,7 +29,6 @@ jobs:
         env:
           PYTHON_VERSION: ${{ matrix.python }}
       - name: Run py launcher with -0 (again)
-        if: matrix.os == 'windows-latest'
         run: |
           py -0
       - name: Install Dependencies
