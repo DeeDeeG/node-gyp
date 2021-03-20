@@ -24,7 +24,7 @@
   "dependencies": {
     "env-paths": "^2.2.0",
     "glob": "^7.1.4",
-    "graceful-fs": "^4.2.3",
+    "graceful-fs": "^4.2.6",
     "make-fetch-happen": "^8.0.9",
     "nopt": "^5.0.0",
     "npmlog": "^4.1.2",
