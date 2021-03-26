@@ -177,9 +177,10 @@ quiet_cmd_solink_module = SOLINK_MODULE($(TOOLSET)) $@
 cmd_solink_module = $(LINK.$(TOOLSET)) -o $@ -shared $(GYP_LDFLAGS) $(LDFLAGS.$(TOOLSET)) -Wl,-soname=$(@F) -Wl,--start-group $(filter-out FORCE_DO_CMD, $^) -Wl,--end-group $(LIBS)
 """  # noqa: E501
 
-LINK_COMMANDS_MAC = """\
+LINK_COMMANDS_MAC = f"""\
 quiet_cmd_alink = LIBTOOL-STATIC $@
-cmd_alink = rm -f $@ && ./gyp-mac-tool filter-libtool libtool $(GYP_LIBTOOLFLAGS) -static -o $@ $(filter %.o,$^)
+CONFIG_PYTHON ?= $(shell if [ -f {os.environ['PYTHON']} ]; then echo {os.environ['PYTHON']}; fi )
+cmd_alink = rm -f $@ && $(CONFIG_PYTHON) ./gyp-mac-tool filter-libtool libtool $(GYP_LIBTOOLFLAGS) -static -o $@ $(filter %.o,$^)
 
 quiet_cmd_link = LINK($(TOOLSET)) $@
 cmd_link = $(LINK.$(TOOLSET)) $(GYP_LDFLAGS) $(LDFLAGS.$(TOOLSET)) -o "$@" $(LD_INPUTS) $(LIBS)
@@ -503,7 +504,7 @@ FORCE_DO_CMD:
 """  # noqa: E501
 )
 
-SHARED_HEADER_MAC_COMMANDS = """
+SHARED_HEADER_MAC_COMMANDS = f"""
 quiet_cmd_objc = CXX($(TOOLSET)) $@
 cmd_objc = $(CC.$(TOOLSET)) $(GYP_OBJCFLAGS) $(DEPFLAGS) -c -o $@ $<
 
@@ -524,10 +525,11 @@ cmd_pch_mm = $(CC.$(TOOLSET)) $(GYP_PCH_OBJCXXFLAGS) $(DEPFLAGS) -c -o $@ $<
 # Use $(4) for the command, since $(2) and $(3) are used as flag by do_cmd
 # already.
 quiet_cmd_mac_tool = MACTOOL $(4) $<
-cmd_mac_tool = ./gyp-mac-tool $(4) $< "$@"
+CONFIG_PYTHON ?= $(shell if [ -f {os.environ['PYTHON']} ]; then echo {os.environ['PYTHON']}; fi )
+cmd_mac_tool = $(CONFIG_PYTHON) ./gyp-mac-tool $(4) $< "$@"
 
 quiet_cmd_mac_package_framework = PACKAGE FRAMEWORK $@
-cmd_mac_package_framework = ./gyp-mac-tool package-framework "$@" $(4)
+cmd_mac_package_framework = $(CONFIG_PYTHON) ./gyp-mac-tool package-framework "$@" $(4)
 
 quiet_cmd_infoplist = INFOPLIST $@
 cmd_infoplist = $(CC.$(TOOLSET)) -E -P -Wno-trigraphs -x c $(INFOPLIST_DEFINES) "$<" -o "$@"
@@ -2301,7 +2303,7 @@ def GenerateOutput(target_list, target_dicts, data, params):
         "LINK.host": GetEnvironFallback(("LINK_host", "LINK"), "$(CXX.host)"),
     }
     if flavor == "mac":
-        flock_command = "./gyp-mac-tool flock"
+        flock_command = f"$(shell if [ -f {os.environ['PYTHON']} ]; then echo {os.environ['PYTHON']}; fi) ./gyp-mac-tool flock"
         header_params.update(
             {
                 "flock": flock_command,
@@ -2331,7 +2333,7 @@ def GenerateOutput(target_list, target_dicts, data, params):
         header_params.update(
             {
                 "copy_archive_args": copy_archive_arguments,
-                "flock": "./gyp-flock-tool flock",
+                "flock": f"$(shell if [ -f {os.environ['PYTHON']} ]; then echo {os.environ['PYTHON']}; fi ) ./gyp-flock-tool flock",
                 "flock_index": 2,
             }
         )
@@ -2347,7 +2349,7 @@ def GenerateOutput(target_list, target_dicts, data, params):
             {
                 "copy_archive_args": copy_archive_arguments,
                 "link_commands": LINK_COMMANDS_AIX,
-                "flock": "./gyp-flock-tool flock",
+                "flock": f"$(shell if [ -f {os.environ['PYTHON']} ]; then echo {os.environ['PYTHON']}; fi ) ./gyp-flock-tool flock",
                 "flock_index": 2,
             }
         )
