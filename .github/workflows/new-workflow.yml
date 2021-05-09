@@ -21,15 +21,9 @@ jobs:
 
       - name: Set Up changelog-maker Config
         run: |
-          # Construct and write out a JSON config file for changelog-maker.
-          # Allows changelog-maker to authenticate to the GitHub API
-          mkdir -p ~/.config/changelog-maker
-          CONFIG_FILE=~/.config/changelog-maker/config.json
-
-          echo "{" > "${CONFIG_FILE}"
-          echo "  \"token\": \"${GITHUB_TOKEN}\"," >> "${CONFIG_FILE}"
-          echo "  \"user\": \"${USER}\"" >> "${CONFIG_FILE}"
-          echo "}" >> "${CONFIG_FILE}"
+          # Make changelog-maker write its config file, including the API token.
+          # Allows changelog-maker to authenticate to the GitHub API later.
+          echo ${{ secrets.GITHUB_TOKEN }} | npx -q changelog-maker@7 -a
 
       # - name: Install Dependencies
       #   run: npm install -g changelog-maker semver
