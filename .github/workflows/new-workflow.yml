@@ -15,11 +15,19 @@ jobs:
         #   ref: master
         #   fetch-depth: 0
 
-      - name: Install Dependencies
-        run: npm install -g changelog-maker semver
+      # - name: Install Dependencies
+      #   run: npm install -g changelog-maker semver
 
       - name: Update CHANGELOG.md and package.json
         run: |
+          # Uses pinned node dependency versions.
+          # Feel free to bump these as needed.
+          CHANGELOG_MAKER_COMMAND="npx --quiet changelog-maker@2.6.0"
+          SEMVER_COMMAND="npx --quiet semver@7.3.5"
+
+          echo "CHANGELOG_MAKER_COMMAND is: ${CHANGELOG_MAKER_COMMAND}"
+          echo "SEMVER_COMMAND is: ${SEMVER_COMMAND}"
+
           STARTING_VERSION=`node -e "console.log(require('./package').version)"`
 
           echo "STARTING_VERSION is: ${STARTING_VERSION}"
@@ -34,7 +42,7 @@ jobs:
 
           echo "TODAYS_DATE is: ${TODAYS_DATE}"
 
-          CHANGELOG_MAKER_SUGGESTED_CHANGELOG=`changelog-maker | grep -vi 'bump version and update changelog'`
+          CHANGELOG_MAKER_SUGGESTED_CHANGELOG=`"${CHANGELOG_MAKER_COMMAND}" | grep -vi 'bump version and update changelog'`
 
           echo "CHANGELOG_MAKER_SUGGESTED_CHANGELOG is: ${CHANGELOG_MAKER_SUGGESTED_CHANGELOG}"
 
@@ -57,7 +65,7 @@ jobs:
 
           echo "VERSION_BUMP_LEVEL is: ${VERSION_BUMP_LEVEL}"
 
-          NEXT_VERSION=`semver -i ${VERSION_BUMP_LEVEL} ${STARTING_VERSION}`
+          NEXT_VERSION=`"${SEMVER_COMMAND}" -i "${VERSION_BUMP_LEVEL}" "${STARTING_VERSION}"`
 
           echo "NEXT_VERSION is: ${NEXT_VERSION}"
 
