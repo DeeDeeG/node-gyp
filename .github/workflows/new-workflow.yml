@@ -19,6 +19,15 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
 
+      - name: Set Up changelog-maker Config
+        run: |
+          CONFIG_FILE="~/.config/changelog-maker/config.json"
+
+          echo '{' > "${CONFIG_FILE}"
+          echo  "  \"token\": \"${GITHUB_TOKEN}\" >> "${CONFIG_FILE}"
+          echo  "  \"user\": \"${USER}\" >> "${CONFIG_FILE}"
+          echo '}' >> "${CONFIG_FILE}"
+
       # - name: Install Dependencies
       #   run: npm install -g changelog-maker semver
 
