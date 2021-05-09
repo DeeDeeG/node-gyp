@@ -23,7 +23,7 @@ jobs:
         run: |
           # Make changelog-maker write its config file, including the API token.
           # Allows changelog-maker to authenticate to the GitHub API later.
-          echo ${{ secrets.GITHUB_TOKEN }} | npx -q changelog-maker@7 -a
+          echo ${{ secrets.GITHUB_TOKEN }} | npx -q changelog-maker@2 -a
 
       # - name: Install Dependencies
       #   run: npm install -g changelog-maker semver
