@@ -1,3 +1,22 @@
+v8.0.1 2021-05-09
+=================
+
+* [[`9fbccb181d`](https://github.com/nodejs/node-gyp/commit/9fbccb181d)] - **ci**: try the other way again to configure changelog-maker (DeeDeeG)
+* [[`b810545bf9`](https://github.com/nodejs/node-gyp/commit/b810545bf9)] - **ci**: use changelog-maker v2, not v7 (DeeDeeG)
+* [[`5967d8a77a`](https://github.com/nodejs/node-gyp/commit/5967d8a77a)] - **ci**: try another way to configure changelog-maker (DeeDeeG)
+* [[`535cdea821`](https://github.com/nodejs/node-gyp/commit/535cdea821)] - **ci**: add forgotten comma (DeeDeeG)
+* [[`71cbc201b6`](https://github.com/nodejs/node-gyp/commit/71cbc201b6)] - **ci**: use double-quotes, per the JSON spec (DeeDeeG)
+* [[`0b227befaa`](https://github.com/nodejs/node-gyp/commit/0b227befaa)] - **ci**: use correct/less-confusing quotation (DeeDeeG)
+* [[`dae5ea98dc`](https://github.com/nodejs/node-gyp/commit/dae5ea98dc)] - **ci**: avoid quoting "\~/" so that it will be expanded (DeeDeeG)
+* [[`48c1e1b4db`](https://github.com/nodejs/node-gyp/commit/48c1e1b4db)] - **ci**: make \~/.config/changelog-maker (DeeDeeG)
+* [[`28ce909643`](https://github.com/nodejs/node-gyp/commit/28ce909643)] - **ci**: set up the config file for changelog-maker (DeeDeeG)
+* [[`dcc03708a0`](https://github.com/nodejs/node-gyp/commit/dcc03708a0)] - **ci**: configure git identity (DeeDeeG)
+* [[`387ab2b7a7`](https://github.com/nodejs/node-gyp/commit/387ab2b7a7)] - **ci**: use fetch-depth 0 for checkout action (DeeDeeG)
+* [[`439674ebf8`](https://github.com/nodejs/node-gyp/commit/439674ebf8)] - **ci**: remove incorrect quoting (DeeDeeG)
+* [[`8ee132f1ee`](https://github.com/nodejs/node-gyp/commit/8ee132f1ee)] - **ci**: use npx to run node module commands (DeeDeeG)
+* [[`e9afca5ec9`](https://github.com/nodejs/node-gyp/commit/e9afca5ec9)] - **ci**: add a new workflow for automated release PRs (DeeDeeG)
+* [[`4b83c3de73`](https://github.com/nodejs/node-gyp/commit/4b83c3de73)] - **doc**: fix v8.0.0 release date (Rod Vagg) [#2346](https://github.com/nodejs/node-gyp/pull/2346)
+
 v8.0.0 2021-04-03
 =================
 
