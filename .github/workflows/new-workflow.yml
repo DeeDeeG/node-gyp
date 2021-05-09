@@ -23,7 +23,7 @@ jobs:
         run: |
           # Allows changelog-maker to authenticate to the GitHub API
           mkdir -p ~/.config/changelog-maker
-          CONFIG_FILE="~/.config/changelog-maker/config.json"
+          CONFIG_FILE=~/.config/changelog-maker/config.json
 
           echo '{' > "${CONFIG_FILE}"
           echo  "  \"token\": \"${GITHUB_TOKEN}\" >> "${CONFIG_FILE}"
