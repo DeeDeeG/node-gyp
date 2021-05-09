@@ -1,0 +1,112 @@
+name: Automated Release Generation
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  generate-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        # with:
+        #   ref: master
+        #   fetch-depth: 0
+
+      - name: Install Dependencies
+        run: npm install -g changelog-maker semver
+
+      - name: Update CHANGELOG.md and package.json
+        run: |
+          STARTING_VERSION=`node -e "console.log(require('./package').version)"`
+
+          echo "STARTING_VERSION is: ${STARTING_VERSION}"
+
+          if [ `uname -s` = "Darwin" ]; then
+            # Appropriate flags for macOS/BSD date
+            TODAYS_DATE=`date -j '+%Y-%m-%d'`
+          else
+            # Appropriate flags for Linux/GNU date
+            TODAYS_DATE=`date -I`
+          fi
+
+          echo "TODAYS_DATE is: ${TODAYS_DATE}"
+
+          CHANGELOG_MAKER_SUGGESTED_CHANGELOG=`changelog-maker | grep -vi 'bump version and update changelog'`
+
+          echo "CHANGELOG_MAKER_SUGGESTED_CHANGELOG is: ${CHANGELOG_MAKER_SUGGESTED_CHANGELOG}"
+
+          CL=${CHANGELOG_MAKER_SUGGESTED_CHANGELOG}
+
+          if [ -z "${CL}" ]; then
+            echo "No CHANGELOG entries to add since the last release. Exiting."
+            exit
+          fi
+
+          # echo "CL is: ${CL}"
+
+          if echo ${CL} | grep -F '**(SEMVER-MAJOR)**'; then
+            VERSION_BUMP_LEVEL="major"
+          elif echo ${CL} | grep -F '**(SEMVER-MINOR)**'; then
+            VERSION_BUMP_LEVEL="minor"
+          else
+            VERSION_BUMP_LEVEL="patch"
+          fi
+
+          echo "VERSION_BUMP_LEVEL is: ${VERSION_BUMP_LEVEL}"
+
+          NEXT_VERSION=`semver -i ${VERSION_BUMP_LEVEL} ${STARTING_VERSION}`
+
+          echo "NEXT_VERSION is: ${NEXT_VERSION}"
+
+          HEADER1="v${NEXT_VERSION} ${TODAYS_DATE}"
+          HEADER2="================="
+
+          echo "HEADER1 is: ${HEADER1}"
+          echo "HEADER2 is: ${HEADER2}"
+
+          FILENAME="new_changelog.md"
+
+          echo "FILENAME is: ${FILENAME}"
+
+          echo "${HEADER1}" > "${FILENAME}"
+          echo "${HEADER2}" >> "${FILENAME}"
+          echo >> "${FILENAME}"
+          echo "${CL}" >> "${FILENAME}"
+          echo >> "${FILENAME}"
+          cat CHANGELOG.md >> "${FILENAME}"
+
+          echo "Updated changelog looks like this:"
+          cat "${FILENAME}"
+
+          echo "Incrementing version"
+
+          npm version "${NEXT_VERSION}"
+
+          echo "Git-adding updated changelog, amending commit"
+
+          mv "${FILENAME}" CHANGELOG.md
+
+          git add CHANGELOG.md
+
+          git commit --amend --no-edit -m "v${NEXT_VERSION}: bump version and update changelog"
+
+          echo "DONE UPDATING \`CHANGELOG.md\` AND \`package.json\`, DONE COMMITTING!"
+
+      - name: Create or Update Pull Request
+        # Pin to an exact commit matching peter-evans/create-pull-request@v3.8.2
+        # Feel free to update to a newer version later, but tags are mutable,
+        # and pinning to a specific commit is a stronger guarantee of no tampering.
+        uses: peter-evans/create-pull-request@052fc72b4198ba9fbc81b818c6e1859f747d49a8
+        with:
+          base: master
+          branch: release-next-automated
+          title: Release Proposal
+          body: |
+            This is an automated release proposal.
+
+            See the changed files (particularly CHANGELOG.md) for details.
+
+            This was created by '.github/workflows/new-workflow.yml'
