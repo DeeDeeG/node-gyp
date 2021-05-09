@@ -19,6 +19,7 @@ jobs:
       #   run: npm install -g changelog-maker semver
 
       - name: Update CHANGELOG.md and package.json
+        shell: bash
         run: |
           # Uses pinned node dependency versions.
           # Feel free to bump these as needed.
@@ -42,7 +43,7 @@ jobs:
 
           echo "TODAYS_DATE is: ${TODAYS_DATE}"
 
-          CHANGELOG_MAKER_SUGGESTED_CHANGELOG=`"${CHANGELOG_MAKER_COMMAND}" | grep -vi 'bump version and update changelog'`
+          CHANGELOG_MAKER_SUGGESTED_CHANGELOG=`${CHANGELOG_MAKER_COMMAND} | grep -vi 'bump version and update changelog'`
 
           echo "CHANGELOG_MAKER_SUGGESTED_CHANGELOG is: ${CHANGELOG_MAKER_SUGGESTED_CHANGELOG}"
 
@@ -65,7 +66,7 @@ jobs:
 
           echo "VERSION_BUMP_LEVEL is: ${VERSION_BUMP_LEVEL}"
 
-          NEXT_VERSION=`"${SEMVER_COMMAND}" -i "${VERSION_BUMP_LEVEL}" "${STARTING_VERSION}"`
+          NEXT_VERSION=`${SEMVER_COMMAND} -i "${VERSION_BUMP_LEVEL}" "${STARTING_VERSION}"`
 
           echo "NEXT_VERSION is: ${NEXT_VERSION}"
 
