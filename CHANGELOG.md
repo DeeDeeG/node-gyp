@@ -1,5 +1,46 @@
 # Changelog
 
+## [8.1.0](https://www.github.com/DeeDeeG/node-gyp/compare/v8.0.0...v8.1.0) (2021-05-10)
+
+
+### Features
+
+* add lib/dummy-file.js ([e440ce5](https://www.github.com/DeeDeeG/node-gyp/commit/e440ce5e294f1d991e079e004e4fefb661ba8846))
+* **python:** try a "feat(python):" prefixed commit ([d005c60](https://www.github.com/DeeDeeG/node-gyp/commit/d005c609894f48ba80813aff58b2b1d598f66f7e))
+
+
+### Bug Fixes
+
+* **ci:** "false" (string) --> false (boolean) in release-please workflow yaml ([fc47227](https://www.github.com/DeeDeeG/node-gyp/commit/fc472272e52e35e0d72b6f6122e1e4f2a4ed8029))
+* dummy commit to test release-please ([42ae6e3](https://www.github.com/DeeDeeG/node-gyp/commit/42ae6e3e6039a6fd4e6d99f966c7b048cbc009a7))
+* update CHANGELOG.md formatting ([1ffecb8](https://www.github.com/DeeDeeG/node-gyp/commit/1ffecb8cb14e491961f948e0c38c042370d99302))
+
+
+### Doc
+
+* fix v8.0.0 release date ([4b83c3d](https://www.github.com/DeeDeeG/node-gyp/commit/4b83c3de7300457919d53f26d96ea9ad6f6bedd8))
+
+
+### Core
+
+* **doc:** try a python(doc): prefixed commit ([d450160](https://www.github.com/DeeDeeG/node-gyp/commit/d450160294d883d96a7c34132d5cdf95d9c4c65e))
+* test committing a 'gyp' prefixed commit ([dd1b8eb](https://www.github.com/DeeDeeG/node-gyp/commit/dd1b8ebe9abab09ac09480e3fb7d882fe35da1d2))
+* try a python: prefixed commit ([2091ad4](https://www.github.com/DeeDeeG/node-gyp/commit/2091ad4328cc1dd28a36aa094d13301fa1356149))
+
+
+### Miscellaneous
+
+* add "refactor:" prefix, try a "refactor:" prefixed commit ([2614ae5](https://www.github.com/DeeDeeG/node-gyp/commit/2614ae56f62e26618bd2cd37b69c0df2e397662e))
+* add more recognized commit prefixes ([0afdbcb](https://www.github.com/DeeDeeG/node-gyp/commit/0afdbcbdcb1f0320d47e1d33b6e3cf8fb6357a20))
+* add release-please GitHub Actions config file ([71544a8](https://www.github.com/DeeDeeG/node-gyp/commit/71544a80c1f1e8d361df2856e467286de3da82bf))
+* auto release changelog ([9aa512a](https://www.github.com/DeeDeeG/node-gyp/commit/9aa512a2380f3f8332ae23fc4de4502fb6a74a12))
+* delete built-in commit prefixes from custom list ([aaae631](https://www.github.com/DeeDeeG/node-gyp/commit/aaae6313b51057843c32322acb2f36dd120c35d0))
+* fix YAML formatting ([6cf0a7d](https://www.github.com/DeeDeeG/node-gyp/commit/6cf0a7ddf175085e4b1c69059a7a33ff3d673f2e))
+* merge gengjiawen/feature/changelog ([9aa512a](https://www.github.com/DeeDeeG/node-gyp/commit/9aa512a2380f3f8332ae23fc4de4502fb6a74a12))
+* restore original CHANGELOG.md ([820fbf9](https://www.github.com/DeeDeeG/node-gyp/commit/820fbf974524362c224492b583433b4da7037b76))
+* separate "chore:" from other miscs to see if they will appear now? ([051d398](https://www.github.com/DeeDeeG/node-gyp/commit/051d39862128702ed722b68a5f32fa7f49dc5d3b))
+* update CHANGELOG.md to test release-please ([3cf8ff4](https://www.github.com/DeeDeeG/node-gyp/commit/3cf8ff4c8c4630e855881c31cdc98b7df494323a))
+
 ## [8.0.0](https://www.github.com/DeeDeeG/node-gyp/compare/v7.1.2...v8.0.0) (2021-04-03)
 
 * [[`0d8a6f1b19`](https://github.com/nodejs/node-gyp/commit/0d8a6f1b19)] - **ci**: update actions/setup-node to v2 (#2302) (Sora Morimoto) [#2302](https://github.com/nodejs/node-gyp/pull/2302)
