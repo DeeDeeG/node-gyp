@@ -15,9 +15,33 @@ jobs:
           package-name: node-gyp
           release-type: node
           changelog-types: >
-              [{"type":"feat","section":"Features","hidden":false},
+                # Conventional Commits "feat:" and "fix:"
+                [{"type":"feat","section":"Features","hidden":false},
                 {"type":"fix","section":"Bug Fixes","hidden":false},
+                # Sub-dirs of node-gyp
+                {"type":"bin","section":"Core","hidden":false},
                 {"type":"gyp","section":"Core","hidden":false},
                 {"type":"lib","section":"Core","hidden":false},
+                {"type":"src","section":"Core","hidden":false},
+                ## Tests
+                {"type":"test","section":"Tests","hidden":false},
+                # Sub-commands of node-gyp
+                {"type":"build","section":"Core","hidden":false},
+                {"type":"configure","section":"Core","hidden":false},
+                {"type":"install","section":"Core","hidden":false},
+                # Abstract categories
+                ## Dependencies
                 {"type":"deps","section":"Core","hidden":false},
-                {"type":"doc","section":"Doc","hidden":false}]
+                ## Specific software platforms
+                {"type":"python","section":"Core","hidden":false},
+                {"type":"win","section":"Core","hidden":false},
+                {"type":"zos","section":"Core","hidden":false},
+                ## Documentation
+                {"type":"doc","section":"Doc","hidden":false},
+                {"type":"docs","section":"Doc","hidden":false},
+                {"type":"readme","section":"Doc","hidden":"false"},
+                ## Misc, CI, Meta, Conventional Commits "chore:"
+                {"type":"chore","section":"Miscellaneous","hidden":"false"},
+                {"type":"ci","section":"Miscellaneous","hidden":"false"},
+                {"type":"travis","section":"Miscellaneous","hidden":"false"}]
+                {"type":"meta","section":"Miscellaneous","hidden":"false"},
