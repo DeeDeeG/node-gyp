@@ -247,6 +247,11 @@ file](LICENSE) for details.
 * [DeeDeeG](https://github.com/DeeDeeG) -
 **DeeDeeG** &lt;DeeDeeG@users.noreply.github.com&gt;
 
+### TSC emeriti
+
+* [DeeDeeG](https://github.com/DeeDeeG) -
+**DeeDeeG** &lt;DeeDeeG@users.noreply.github.com&gt;
+
 ### Collaborators
 
 * [DeeDeeG](https://github.com/DeeDeeG) -
