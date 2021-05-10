@@ -235,3 +235,23 @@ is run via `npm`, not when `node-gyp` is run directly.
 
 `node-gyp` is available under the MIT license. See the [LICENSE
 file](LICENSE) for details.
+
+## Note: The following TSC and Collaborators list is fake (fake metadata for testing git node land)!!!
+
+### DeeDeeG is not a TSC member or collaborator for NodeJS or node-gyp!!!
+
+## Current project team members
+
+### TSC (Technical Steering Committee)
+
+* [DeeDeeG](https://github.com/DeeDeeG) -
+**DeeDeeG** &lt;DeeDeeG@users.noreply.github.com&gt;
+
+### Collaborators
+
+* [DeeDeeG](https://github.com/DeeDeeG) -
+**DeeDeeG** &lt;DeeDeeG@users.noreply.github.com&gt;
+
+## Note: The following TSC and Collaborators list is fake (fake metadata for testing git node land)!!!
+
+### DeeDeeG is not a TSC member or collaborator for NodeJS or node-gyp!!!
