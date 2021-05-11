@@ -1,5 +1,18 @@
 # Changelog
 
+## [8.1.0](https://www.github.com/DeeDeeG/node-gyp/compare/v8.0.0...v8.1.0) (2021-05-11)
+
+
+### Features
+
+* **hmm:** try this out too ([8a83224](https://www.github.com/DeeDeeG/node-gyp/commit/8a8322415db05f3c584e2c596fb68162cc97d4a4))
+* try this out ([23cad87](https://www.github.com/DeeDeeG/node-gyp/commit/23cad872ecfc7dcd39fcb7f0a2ee923465f06dba))
+
+
+### Miscellaneous
+
+* testing one two three ([80f7497](https://www.github.com/DeeDeeG/node-gyp/commit/80f7497d79b449defbbdd2cbc8091444475d9c7c))
+
 ## [8.0.0](https://www.github.com/DeeDeeG/node-gyp/compare/v7.1.2...v8.0.0) (2021-04-03)
 
 * [[`0d8a6f1b19`](https://github.com/nodejs/node-gyp/commit/0d8a6f1b19)] - **ci**: update actions/setup-node to v2 (#2302) (Sora Morimoto) [#2302](https://github.com/nodejs/node-gyp/pull/2302)
