@@ -1,5 +1,42 @@
 # Changelog
 
+## [9.0.0](https://www.github.com/DeeDeeG/node-gyp/compare/v8.1.0...v9.0.0) (2021-05-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* yolo again my duderly dude
+* whoah man this is a breaking change
+* actually this is important
+* do a breaking thing
+* do a thing
+
+### blang
+
+* do a thing ([3e0839b](https://www.github.com/DeeDeeG/node-gyp/commit/3e0839b2c4662bac11971c03f502a5b9ddbf1006))
+
+
+### Miscellaneous
+
+* do a breaking thing ([3440a6b](https://www.github.com/DeeDeeG/node-gyp/commit/3440a6b119e10993c8e1eb10746ca698ee382193))
+* see if this broke the Changelog ([9f5673e](https://www.github.com/DeeDeeG/node-gyp/commit/9f5673ea00ed895029a029f8ad4249f60a0e2b29))
+
+
+### unrecognized
+
+* do something truly unrecognized and unimportant ([1bd4f38](https://www.github.com/DeeDeeG/node-gyp/commit/1bd4f38cc90a2fc8a2a9b251b5bed2a75df4d315))
+
+
+### whoa
+
+* whoah man this is a breaking change ([ecb39c8](https://www.github.com/DeeDeeG/node-gyp/commit/ecb39c875866d21c8434b36cf945141aeec4858b))
+
+
+### ⚠ BREAKING CHANGES
+
+* yolo again my duderly dude ([deb3d76](https://www.github.com/DeeDeeG/node-gyp/commit/deb3d76b5bc831f0ba5a74ac742db5aec2e750ac))
+* yolo my dude ([e50333b](https://www.github.com/DeeDeeG/node-gyp/commit/e50333bcc640734d32d756641802d6a481c327db))
+
 ## [8.1.0](https://www.github.com/DeeDeeG/node-gyp/compare/v8.0.0...v8.1.0) (2021-05-11)
 
 
