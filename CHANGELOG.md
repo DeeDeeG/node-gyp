@@ -1,5 +1,24 @@
 # Changelog
 
+### [8.0.1](https://www.github.com/DeeDeeG/node-gyp/compare/v8.0.0...v8.0.1) (2021-05-12)
+
+
+### Doc
+
+* fix v8.0.0 release date ([4b83c3d](https://www.github.com/DeeDeeG/node-gyp/commit/4b83c3de7300457919d53f26d96ea9ad6f6bedd8))
+* update CHANGELOG markdown for release-please ([cd09b65](https://www.github.com/DeeDeeG/node-gyp/commit/cd09b65b072e403c2cbd318b3f401fdf63b58d60))
+
+
+### Miscellaneous
+
+* add .github/workflows/release-please.yml ([177c0f0](https://www.github.com/DeeDeeG/node-gyp/commit/177c0f0dce8c5e6c6d86424709177b9251e939f1))
+* add more prefixes for release-please ([0abaa35](https://www.github.com/DeeDeeG/node-gyp/commit/0abaa35598390dd2061a5b94a0c09be5b68a6ded))
+* **ci:** reformat comments for release-please ([ea13541](https://www.github.com/DeeDeeG/node-gyp/commit/ea13541e40159121a13e8ceee54a14b96ea6a509))
+* fix formattinf of release-please.yml ([09587fa](https://www.github.com/DeeDeeG/node-gyp/commit/09587fa91dfc3a08c440e0c24cc6b201cefcd9cb))
+* remove "travis" prefix for release-please ([c47b6f2](https://www.github.com/DeeDeeG/node-gyp/commit/c47b6f257486cab0730ff2db571e82a13ddc7f1f))
+* **revert:** "chore(ci): reformat comments for release-please" ([33ce60f](https://www.github.com/DeeDeeG/node-gyp/commit/33ce60f5cb1f51c4cfe253b8536f45a2ff5a904a))
+* update commit guidelines in PR template ([92ae1c1](https://www.github.com/DeeDeeG/node-gyp/commit/92ae1c1bb133cbe098421347d36625d7e5b0faf2))
+
 ## v8.0.0 2021-04-03
 
 * [[`0d8a6f1b19`](https://github.com/nodejs/node-gyp/commit/0d8a6f1b19)] - **ci**: update actions/setup-node to v2 (#2302) (Sora Morimoto) [#2302](https://github.com/nodejs/node-gyp/pull/2302)
