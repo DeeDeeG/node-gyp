@@ -15,13 +15,16 @@ jobs:
           package-name: node-gyp
           release-type: node
           changelog-types: >
+          # Standard Conventional Commits "feat" and "fix":
             [{"type":"feat","section":"Features","hidden":false},
             {"type":"fix","section":"Bug Fixes","hidden":false},
+          # node-gyp subdirectories:
             {"type":"bin","section":"Core","hidden":false},
             {"type":"gyp","section":"Core","hidden":false},
             {"type":"lib","section":"Core","hidden":false},
             {"type":"src","section":"Core","hidden":false},
             {"type":"test","section":"Tests","hidden":false},
+          # node-gyp subcommands:
             {"type":"build","section":"Core","hidden":false},
             {"type":"clean","section":"Core","hidden":false},
             {"type":"configure","section":"Core","hidden":false},
@@ -29,7 +32,10 @@ jobs:
             {"type":"list","section":"Core","hidden":false},
             {"type":"rebuild","section":"Core","hidden":false},
             {"type":"remove","section":"Core","hidden":false},
+          # Abstract categories:
+          ## Dependencies:
             {"type":"deps","section":"Core","hidden":false},
+          ## Languages/OSes:
             {"type":"python","section":"Core","hidden":false},
             {"type":"lin","section":"Core","hidden":false},
             {"type":"linux","section":"Core","hidden":false},
@@ -38,19 +44,13 @@ jobs:
             {"type":"win","section":"Core","hidden":false},
             {"type":"windows","section":"Core","hidden":false},
             {"type":"zos","section":"Core","hidden":false},
+          ## Documentation:
             {"type":"doc","section":"Doc","hidden":false},
             {"type":"docs","section":"Doc","hidden":false},
             {"type":"readme","section":"Doc","hidden":false},
+          ## Standard Conventional Commits "chore" (under "Miscellaneous"):
             {"type":"chore","section":"Miscellaneous","hidden":false},
+          ## Miscellaneous abstract categories:
             {"type":"refactor","section":"Miscellaneous","hidden":false},
             {"type":"ci","section":"Miscellaneous","hidden":false},
             {"type":"meta","section":"Miscellaneous","hidden":false}]
-
-          # Standard Conventional Commits: `feat` and `fix`
-          # node-gyp subdirectories: `bin`, `gyp`, `lib`, `src`, `test`
-          # node-gyp subcommands: `build`, `clean`, `configure`, `install`, `list`, `rebuild`, `remove`
-          # Core abstract category: `deps`
-          # Languages/platforms: `python`, `lin`, `linux`, `mac`, `macos`, `win`, `window`, `zos`
-          # Documentation: `doc`, `docs`, `readme`
-          # Standard Conventional Commits: `chore` (under "Miscellaneous")
-          # Miscellaneous abstract categories: `refactor`, `ci`, `meta`
