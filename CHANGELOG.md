@@ -1,5 +1,55 @@
 # Changelog
 
+## [10.0.0](https://www.github.com/DeeDeeG/node-gyp/compare/v9.4.0...v10.0.0) (2023-10-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* update engines.node to ^14.17.0 || ^16.13.0 || >=18.0.0
+
+### Features
+
+* drop rimraf dependency ([4a50fe3](https://www.github.com/DeeDeeG/node-gyp/commit/4a50fe31574217c4b2a798fc72b19947a64ceea1))
+* **gyp:** update gyp to v0.16.1 ([#2923](https://www.github.com/DeeDeeG/node-gyp/issues/2923)) ([707927c](https://www.github.com/DeeDeeG/node-gyp/commit/707927cd579205ef2b4b17e61c1cce24c056b452))
+* replace npmlog with proc-log ([4a50fe3](https://www.github.com/DeeDeeG/node-gyp/commit/4a50fe31574217c4b2a798fc72b19947a64ceea1))
+* update engines.node to ^14.17.0 || ^16.13.0 || >=18.0.0 ([4a50fe3](https://www.github.com/DeeDeeG/node-gyp/commit/4a50fe31574217c4b2a798fc72b19947a64ceea1))
+
+
+### Bug Fixes
+
+* create Python symlink only during builds, and clean it up after ([#2721](https://www.github.com/DeeDeeG/node-gyp/issues/2721)) ([0f1f667](https://www.github.com/DeeDeeG/node-gyp/commit/0f1f667b737d21905e283df100a2cb639993562a))
+* promisify build command ([4a50fe3](https://www.github.com/DeeDeeG/node-gyp/commit/4a50fe31574217c4b2a798fc72b19947a64ceea1))
+* use fs/promises in favor of fs.promises ([4a50fe3](https://www.github.com/DeeDeeG/node-gyp/commit/4a50fe31574217c4b2a798fc72b19947a64ceea1))
+
+
+### Tests
+
+* increase mocha timeout ([#2887](https://www.github.com/DeeDeeG/node-gyp/issues/2887)) ([445c28f](https://www.github.com/DeeDeeG/node-gyp/commit/445c28fabc5fbdf9c3bb3341fb70660a3530f6ad))
+* update expired certs ([#2908](https://www.github.com/DeeDeeG/node-gyp/issues/2908)) ([5746691](https://www.github.com/DeeDeeG/node-gyp/commit/5746691a36f7b37019d4b8d4e9616aec43d20410))
+
+
+### Miscellaneous
+
+* empty commit to add changelog entries from [#2770](https://www.github.com/DeeDeeG/node-gyp/issues/2770) ([4a50fe3](https://www.github.com/DeeDeeG/node-gyp/commit/4a50fe31574217c4b2a798fc72b19947a64ceea1))
+* GitHub Workflows security hardening ([#2740](https://www.github.com/DeeDeeG/node-gyp/issues/2740)) ([26683e9](https://www.github.com/DeeDeeG/node-gyp/commit/26683e993df038fb94d89f2276f3535e4522d79a))
+
+
+### Core
+
+* find python checks order changed on windows ([#2872](https://www.github.com/DeeDeeG/node-gyp/issues/2872)) ([b030555](https://www.github.com/DeeDeeG/node-gyp/commit/b030555cdb754d9c23906e7e707115cd077bbf76))
+* glob@8.0.3 ([4a50fe3](https://www.github.com/DeeDeeG/node-gyp/commit/4a50fe31574217c4b2a798fc72b19947a64ceea1))
+* nopt@^7.0.0 ([4a50fe3](https://www.github.com/DeeDeeG/node-gyp/commit/4a50fe31574217c4b2a798fc72b19947a64ceea1))
+* standard@17.0.0 and fix linting errors ([4a50fe3](https://www.github.com/DeeDeeG/node-gyp/commit/4a50fe31574217c4b2a798fc72b19947a64ceea1))
+* which@3.0.0 ([4a50fe3](https://www.github.com/DeeDeeG/node-gyp/commit/4a50fe31574217c4b2a798fc72b19947a64ceea1))
+
+
+### Doc
+
+* Add note about Python symlinks (PR 2362) to CHANGELOG.md for 9.1.0 ([#2783](https://www.github.com/DeeDeeG/node-gyp/issues/2783)) ([b3d41ae](https://www.github.com/DeeDeeG/node-gyp/commit/b3d41aeb737ddd54cc292f363abc561dcc0a614e))
+* README.md Do not hardcode the supported versions of Python ([#2880](https://www.github.com/DeeDeeG/node-gyp/issues/2880)) ([bb93b94](https://www.github.com/DeeDeeG/node-gyp/commit/bb93b946a9c74934b59164deb52128cf913c97d5))
+* update applicable GitHub links from master to main ([#2843](https://www.github.com/DeeDeeG/node-gyp/issues/2843)) ([d644ce4](https://www.github.com/DeeDeeG/node-gyp/commit/d644ce48311edf090d0e920ad449e5766c757933))
+* Update windows installation instructions in README.md ([#2882](https://www.github.com/DeeDeeG/node-gyp/issues/2882)) ([c9caa2e](https://www.github.com/DeeDeeG/node-gyp/commit/c9caa2ecf3c7deae68444ce8fabb32d2dca651cd))
+
 ## [9.4.0](https://www.github.com/nodejs/node-gyp/compare/v9.3.1...v9.4.0) (2023-06-12)
 
 
